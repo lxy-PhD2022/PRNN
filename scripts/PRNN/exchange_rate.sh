@@ -6,7 +6,7 @@ if [ ! -d "./logs/LongForecasting" ]; then
     mkdir ./logs/LongForecasting
 fi
 seq_len=96
-model_name=PRNN
+model_name=PRNN_TST
 
 for pred_len in 96 
 do
