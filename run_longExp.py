@@ -33,6 +33,11 @@ parser.add_argument('--seq_len', type=int, default=96, help='input sequence leng
 parser.add_argument('--label_len', type=int, default=18, help='start token length')
 parser.add_argument('--pred_len', type=int, default=96, help='prediction sequence length')
 
+# FFT_PRNN
+parser.add_argument('--top_k', type=int, default=3, help='top k amplitudes in freq domain')
+parser.add_argument('--dis', type=int, default=10, help='amplitudes dis in freq domain')
+parser.add_argument('--rnn_inp', type=int, default=96, help='rnn input size')
+
 
 # DLinear
 #parser.add_argument('--individual', action='store_true', default=False, help='DLinear: a linear layer for each variate(channel) individually')
@@ -44,7 +49,7 @@ parser.add_argument('--patch_len', type=int, default=16, help='patch length')
 parser.add_argument('--stride', type=int, default=8, help='stride')
 parser.add_argument('--padding_patch', default='end', help='None: None; end: padding on the end')
 parser.add_argument('--revin', type=int, default=1, help='RevIN; True 1 False 0')
-parser.add_argument('--affine', type=int, default=0, help='RevIN-affine; True 1 False 0')
+parser.add_argument('--affine', type=int, default=1, help='RevIN-affine; True 1 False 0')
 parser.add_argument('--subtract_last', type=int, default=0, help='0: subtract mean; 1: subtract last')
 parser.add_argument('--decomposition', type=int, default=0, help='decomposition; True 1 False 0')
 parser.add_argument('--kernel_size', type=int, default=25, help='decomposition-kernel')
@@ -74,18 +79,19 @@ parser.add_argument('--do_predict', action='store_true', help='whether to predic
 
 # optimization
 parser.add_argument('--num_workers', type=int, default=10, help='data loader num workers')
-parser.add_argument('--itr', type=int, default=2, help='experiments times')
-parser.add_argument('--train_epochs', type=int, default=100, help='train epochs')
-parser.add_argument('--batch_size', type=int, default=128, help='batch size of train input data')
-parser.add_argument('--patience', type=int, default=100, help='early stopping patience')
+parser.add_argument('--itr', type=int, default=1, help='experiments times')
+parser.add_argument('--train_epochs', type=int, default=300, help='train epochs')
+parser.add_argument('--batch_size', type=int, default=32, help='batch size of train input data')
+parser.add_argument('--patience', type=int, default=20, help='early stopping patience')
 parser.add_argument('--learning_rate', type=float, default=0.0001, help='optimizer learning rate')
 parser.add_argument('--des', type=str, default='test', help='exp description')
 parser.add_argument('--loss', type=str, default='mse', help='loss function')
-parser.add_argument('--lradj', type=str, default='type3', help='adjust learning rate')
+parser.add_argument('--lradj', type=str, default='TST', help='adjust learning rate')
 parser.add_argument('--pct_start', type=float, default=0.3, help='pct_start')
 parser.add_argument('--use_amp', action='store_true', help='use automatic mixed precision training', default=False)
-parser.add_argument('--hidden_size', type=int, default=512, help='early stopping patience')
 parser.add_argument('--num_layers', type=int, default=1, help='early stopping patience')
+parser.add_argument('--k', type=int, default=20, help='early stopping patience')
+parser.add_argument('--hidden_size', type=int, default=512, help='koopman space hidden_size')
 
 # GPU
 parser.add_argument('--use_gpu', type=bool, default=True, help='use gpu')
@@ -172,4 +178,3 @@ else:
     print('>>>>>>>testing : {}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'.format(setting))
     exp.test(setting, test=1)
     torch.cuda.empty_cache()
-    
