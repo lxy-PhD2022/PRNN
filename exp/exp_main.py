@@ -1,6 +1,6 @@
 from data_provider.data_factory import data_provider
 from exp.exp_basic import Exp_Basic
-from models import Informer, Autoformer, Transformer, DLinear, Linear, NLinear, PRNN
+from models import Informer, Autoformer, Transformer, DLinear, Linear, NLinear, PRNN, FFT_PRNN
 from utils.tools import EarlyStopping, adjust_learning_rate, visual, test_params_flop
 from utils.metrics import metric
 
@@ -20,6 +20,20 @@ import nni
 
 warnings.filterwarnings('ignore')
 
+
+#################################
+def count_parameters(model, print_detail):
+    total_params = 0
+    for name, parameter in model.named_parameters():
+        if parameter.requires_grad:
+            param_count = parameter.numel()
+            total_params += param_count
+            if print_detail:
+                print(f"{name}: {param_count}")
+    return total_params
+################################
+
+
 class Exp_Main(Exp_Basic):
     def __init__(self, args):
         super(Exp_Main, self).__init__(args)
@@ -32,7 +46,7 @@ class Exp_Main(Exp_Basic):
             'DLinear': DLinear,
             'NLinear': NLinear,
             'Linear': Linear,
-            'PRNN_TST': PRNN,
+            'PRNN_TST': FFT_PRNN
         }
         model = model_dict[self.args.model].Model(self.args).float()
 
@@ -81,7 +95,7 @@ class Exp_Main(Exp_Basic):
                             else:
                                 outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
                 else:
-                    if 'Linear' in self.args.model or 'TST' in self.args.model:
+                    if 'Linear' in self.args.model or 'TST' in self.args.model or 'FFT' in self.args.model:
                         outputs = self.model(batch_x)
                     else:
                         if self.args.output_attention:
@@ -105,6 +119,10 @@ class Exp_Main(Exp_Basic):
     
 
     def train(self, setting):
+        #################################
+        total_parameters = count_parameters(self.model, print_detail=True)
+        print(f"Total trainable parameters: {total_parameters}")
+        ################################
         train_data, train_loader = self._get_data(flag='train')
         vali_data, vali_loader = self._get_data(flag='val')
         test_data, test_loader = self._get_data(flag='test')
@@ -167,7 +185,7 @@ class Exp_Main(Exp_Basic):
                         loss = criterion(outputs, batch_y)
                         train_loss.append(loss.item())
                 else:
-                    if 'Linear' in self.args.model or 'TST' in self.args.model:
+                    if 'Linear' in self.args.model or 'TST' in self.args.model or 'FFT' in self.args.model:
                         outputs = self.model(batch_x)
                     else:
                         if self.args.output_attention:
@@ -224,7 +242,7 @@ class Exp_Main(Exp_Basic):
                 print('Updating learning rate to {}'.format(scheduler.get_last_lr()[0]))
     
         best_model_path = path + '/' + 'checkpoint.pth'
-        self.model.load_state_dict(torch.load(best_model_path))
+        self.model.load_state_dict(torch.load(best_model_path, map_location='cuda:0'))
     
         return self.model
 
@@ -236,7 +254,7 @@ class Exp_Main(Exp_Basic):
         
         if test:
             print('loading model')
-            self.model.load_state_dict(torch.load(os.path.join('./checkpoints/' + setting, 'checkpoint.pth')))
+            self.model.load_state_dict(torch.load(os.path.join('./checkpoints/' + setting, 'checkpoint.pth'), map_location='cuda:0'))
 
         preds = []
         trues = []
@@ -268,7 +286,7 @@ class Exp_Main(Exp_Basic):
                             else:
                                 outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
                 else:
-                    if 'Linear' in self.args.model or 'TST' in self.args.model:
+                    if 'Linear' in self.args.model or 'TST' in self.args.model or 'FFT' in self.args.model:
                             outputs = self.model(batch_x)
                     else:
                         if self.args.output_attention:
@@ -337,7 +355,7 @@ class Exp_Main(Exp_Basic):
         if load:
             path = os.path.join(self.args.checkpoints, setting)
             best_model_path = path + '/' + 'checkpoint.pth'
-            self.model.load_state_dict(torch.load(best_model_path))
+            self.model.load_state_dict(torch.load(best_model_path, map_location='cuda:0'))
 
         preds = []
 
