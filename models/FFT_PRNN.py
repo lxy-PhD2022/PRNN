@@ -51,6 +51,7 @@ class Model(nn.Module):
                                   pe=pe, learn_pe=learn_pe, fc_dropout=fc_dropout, head_dropout=head_dropout, padding_patch = padding_patch,
                                   pretrain_head=pretrain_head, head_type=head_type, individual=individual, revin=revin, affine=affine,
                                   subtract_last=subtract_last, verbose=verbose, **kwargs)
+                     
     def forward(self, x):           # x: [Batch, Input length, Channel]
         x = x.permute(0,2,1)    # x: [Batch, Channel, Input length]
         x = self.model(x)
