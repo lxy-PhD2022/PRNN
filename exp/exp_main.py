@@ -46,7 +46,7 @@ class Exp_Main(Exp_Basic):
             'DLinear': DLinear,
             'NLinear': NLinear,
             'Linear': Linear,
-            'PRNN_TST': FFT_PRNN
+            'PRNN_TST': FFT_PRNN,
         }
         model = model_dict[self.args.model].Model(self.args).float()
 
