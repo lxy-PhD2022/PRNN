@@ -5,9 +5,9 @@ install pip env by requirements.txt
 you can obtain the benchmark datasets from Google Drive 'https://drive.google.com/drive/folders/1ZOYpTUa82_jCcxIdTmyr0LXQfvaM9vIy' provided in paper Autoformer, then create a folder named 'dataset' to put them in
 
 for Traffic, Exchange, ETTh1, ETTm1, ETTm2 --
-running python rnn_pretrain.py --dset traffic --mask_ratio 0.4 --patch_len 16 --stride 8 --hidden_size 512 --context_points 96 --batch_size 32 --n_epochs_pretrain 100
-running python rnn_finetune.py --dset traffic --patch_len 16 --stride 8 --hidden_size 512 --context_points 96 --pretrained_model patchtst_pretrained_cw96_patch16_stride8_epochs-pretrain100_mask0.4_model1 --target_points 96 --batch_size 32 --n_epochs_finetune 100
-note that for 96 and 720 prediction length of Traffic, the batch_size for rnn_finetune.py is 36 and 16, respectively.
+running 'python rnn_pretrain.py --dset traffic --mask_ratio 0.4 --patch_len 16 --stride 8 --hidden_size 512 --context_points 96 --batch_size 32 --n_epochs_pretrain 100'
+running 'python rnn_finetune.py --dset traffic --patch_len 16 --stride 8 --hidden_size 512 --context_points 96 --pretrained_model patchtst_pretrained_cw96_patch16_stride8_epochs-pretrain100_mask0.4_model1 --target_points 96 --batch_size 32 --n_epochs_finetune 100'
+note that for 96 and 720 prediction length of Traffic, the batch_size for rnn_finetune.py is 36 and 16, respectively. For ETTh1, the hidden_size for rnn_pretrain.py and rnn_finetune.py is 64
 
 for Weather, Electricity, Solar, ILI, ETTh2, PEMS03, PEMS04, PEMS07, PEMS08 --
 running 'scripts\xxx.sh'
