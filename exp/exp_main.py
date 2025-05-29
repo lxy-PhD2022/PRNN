@@ -16,7 +16,6 @@ import time
 import warnings
 import matplotlib.pyplot as plt
 import numpy as np
-import nni
 
 warnings.filterwarnings('ignore')
 
@@ -226,9 +225,6 @@ class Exp_Main(Exp_Basic):
             vali_loss = self.vali(vali_data, vali_loader, criterion)
             test_loss = self.vali(test_data, test_loader, criterion)
     
-            # 报告中间结果给NNI
-            nni.report_intermediate_result(test_loss)
-    
             print("Epoch: {0}, Steps: {1} | Train Loss: {2:.7f} Vali Loss: {3:.7f} Test Loss: {4:.7f}".format(
                 epoch + 1, train_steps, train_loss, vali_loss, test_loss))
             early_stopping(vali_loss, self.model, path)
@@ -343,10 +339,6 @@ class Exp_Main(Exp_Basic):
         np.save(folder_path + 'pred.npy', preds)
         # np.save(folder_path + 'true.npy', trues)
         # np.save(folder_path + 'x.npy', inputx)
-
-        # 向NNI报告最终的验证损失
-        nni.report_final_result(mse)
-
         return
 
     def predict(self, setting, load=False):
