@@ -1,0 +1,369 @@
+python rnn_pretrain.py --dset traffic --mask_ratio 0.4 --patch_len 16 --stride 8 --hidden_siz
+e 512 --context_points 96 --batch_size 36 --n_epochs_pretrain 100
+args: Namespace(batch_size=36, context_points=96, d_ff=512, d_model=128, device='cuda:0', dropout=0.2, dset_pretrain='traffic', features='M', head_dropout=0.2, hidden_size=512, lr=0.0001, mask_ratio=0.4, model_type='based_model', n_epochs_pretrain=100, n_heads=16, n_layers=3, num_workers=0, patch_len=16, pretrained_model_id=1, revin=1, scaler='standard', stride=8, target_points=96)
+number of patches: 11
+number of model params 542224
+suggested_lr 5.590810182512223e-05
+number of patches: 11
+number of model params 542224
+          epoch     train_loss     valid_loss           time
+Better model found at epoch 0 with valid_loss value: 0.5264524750362168.
+              0       0.720755       0.526452          01:02
+Better model found at epoch 1 with valid_loss value: 0.44933222174142085.
+              1       0.504904       0.449332          01:03
+Better model found at epoch 2 with valid_loss value: 0.41943954660690097.
+              2       0.454941       0.419440          01:03
+Better model found at epoch 3 with valid_loss value: 0.40169062605828565.
+              3       0.430671       0.401691          01:03
+Better model found at epoch 4 with valid_loss value: 0.3883744158851031.
+              4       0.414238       0.388374          01:03
+Better model found at epoch 5 with valid_loss value: 0.3757499864774609.
+              5       0.400170       0.375750          01:03
+Better model found at epoch 6 with valid_loss value: 0.36424587004016784.
+              6       0.387430       0.364246          01:03
+Better model found at epoch 7 with valid_loss value: 0.35548987896739537.
+              7       0.376079       0.355490          01:03
+Better model found at epoch 8 with valid_loss value: 0.3466325055971553.
+              8       0.365483       0.346633          01:03
+Better model found at epoch 9 with valid_loss value: 0.3389131567838463.
+              9       0.355201       0.338913          01:02
+Better model found at epoch 10 with valid_loss value: 0.33232172736914883.
+             10       0.345910       0.332322          01:02
+Better model found at epoch 11 with valid_loss value: 0.3265436345880682.
+             11       0.337892       0.326544          01:00
+Better model found at epoch 12 with valid_loss value: 0.3230794393320101.
+             12       0.331235       0.323079          01:01
+Better model found at epoch 13 with valid_loss value: 0.3185119445176099.
+             13       0.325912       0.318512          01:02
+Better model found at epoch 14 with valid_loss value: 0.316717966574635.
+             14       0.321618       0.316718          01:02
+Better model found at epoch 15 with valid_loss value: 0.31359969844737734.
+             15       0.317709       0.313600          01:02
+Better model found at epoch 16 with valid_loss value: 0.31144366186832106.
+             16       0.314488       0.311444          01:01
+Better model found at epoch 17 with valid_loss value: 0.3095097550421433.
+             17       0.311827       0.309510          01:01
+Better model found at epoch 18 with valid_loss value: 0.30796362907322394.
+             18       0.309302       0.307964          01:01
+Better model found at epoch 19 with valid_loss value: 0.30676987916141446.
+             19       0.307343       0.306770          01:02
+Better model found at epoch 20 with valid_loss value: 0.3061237737114784.
+             20       0.305312       0.306124          01:03
+Better model found at epoch 21 with valid_loss value: 0.3037051683732503.
+             21       0.303725       0.303705          01:03
+             22       0.302093       0.304073          01:01
+Better model found at epoch 23 with valid_loss value: 0.3019710129675271.
+             23       0.300705       0.301971          01:01
+Better model found at epoch 24 with valid_loss value: 0.3013785567217602.
+             24       0.299693       0.301379          01:02
+Better model found at epoch 25 with valid_loss value: 0.3004227557288531.
+             25       0.298789       0.300423          01:02
+Better model found at epoch 26 with valid_loss value: 0.3001066112575726.
+             26       0.297711       0.300107          01:02
+Better model found at epoch 27 with valid_loss value: 0.30005204340264713.
+             27       0.296724       0.300052          01:02
+Better model found at epoch 28 with valid_loss value: 0.29910463887765276.
+             28       0.296090       0.299105          01:02
+Better model found at epoch 29 with valid_loss value: 0.29861211346115857.
+             29       0.295252       0.298612          01:02
+Better model found at epoch 30 with valid_loss value: 0.29708037356308326.
+             30       0.294601       0.297080          01:03
+Better model found at epoch 31 with valid_loss value: 0.2968353510333572.
+             31       0.293817       0.296835          01:03
+             32       0.293293       0.297248          01:03
+Better model found at epoch 33 with valid_loss value: 0.2957405030619732.
+             33       0.292529       0.295741          01:03
+Better model found at epoch 34 with valid_loss value: 0.29547051160469034.
+             34       0.292066       0.295471          01:03
+Better model found at epoch 35 with valid_loss value: 0.2954557580735438.
+             35       0.291346       0.295456          01:02
+Better model found at epoch 36 with valid_loss value: 0.2944013674814682.
+             36       0.290802       0.294401          01:03
+             37       0.290421       0.294789          01:03
+Better model found at epoch 38 with valid_loss value: 0.29366631826530515.
+             38       0.290019       0.293666          01:03
+             39       0.289445       0.294675          01:02
+Better model found at epoch 40 with valid_loss value: 0.2927889700469879.
+             40       0.289206       0.292789          01:02
+Better model found at epoch 41 with valid_loss value: 0.29224997927523894.
+             41       0.288585       0.292250          01:03
+             42       0.288238       0.292398          01:03
+             43       0.287829       0.292791          01:03
+             44       0.287435       0.292331          01:02
+Better model found at epoch 45 with valid_loss value: 0.29119674618311636.
+             45       0.287333       0.291197          01:01
+             46       0.286934       0.291487          01:02
+Better model found at epoch 47 with valid_loss value: 0.2907219874722494.
+             47       0.286659       0.290722          01:02
+             48       0.286367       0.290807          01:03
+Better model found at epoch 49 with valid_loss value: 0.2901699334867456.
+             49       0.286038       0.290170          01:02
+             50       0.285467       0.291294          01:02
+Better model found at epoch 51 with valid_loss value: 0.28942549565985287.
+             51       0.285299       0.289425          01:03
+             52       0.284976       0.290923          01:03
+             53       0.284856       0.289511          01:03
+Better model found at epoch 54 with valid_loss value: 0.289216392374699.
+             54       0.284623       0.289216          01:03
+             55       0.284420       0.289511          01:03
+             56       0.284124       0.290661          01:03
+Better model found at epoch 57 with valid_loss value: 0.28854766974314233.
+             57       0.283777       0.288548          01:03
+             58       0.283599       0.288750          01:03
+Better model found at epoch 59 with valid_loss value: 0.2876005040673446.
+             59       0.283347       0.287601          01:03
+             60       0.283129       0.287705          01:02
+Better model found at epoch 61 with valid_loss value: 0.287440273002427.
+             61       0.283152       0.287440          01:03
+             62       0.282833       0.287977          01:03
+             63       0.282619       0.288186          01:03
+Better model found at epoch 64 with valid_loss value: 0.28736082808502034.
+             64       0.282436       0.287361          01:03
+Better model found at epoch 65 with valid_loss value: 0.2872833858262624.
+             65       0.282282       0.287283          01:03
+             66       0.282111       0.287526          01:03
+Better model found at epoch 67 with valid_loss value: 0.28679552715561035.
+             67       0.282085       0.286796          01:03
+             68       0.281845       0.286840          01:03
+             69       0.281577       0.286819          01:03
+             70       0.281303       0.286869          01:02
+Better model found at epoch 71 with valid_loss value: 0.28628264443835605.
+             71       0.281467       0.286283          01:03
+             72       0.281315       0.286497          01:03
+             73       0.281208       0.286522          01:03
+             74       0.281133       0.286460          01:03
+Better model found at epoch 75 with valid_loss value: 0.285862361717339.
+             75       0.280883       0.285862          01:03
+Better model found at epoch 76 with valid_loss value: 0.2857773865223792.
+             76       0.280907       0.285777          01:03
+Better model found at epoch 77 with valid_loss value: 0.28565715351139187.
+             77       0.280778       0.285657          01:03
+Better model found at epoch 78 with valid_loss value: 0.2850332610367437.
+             78       0.280714       0.285033          01:03
+             79       0.280587       0.286307          01:03
+             80       0.280387       0.285530          01:02
+             81       0.280252       0.285868          01:03
+             82       0.280124       0.285679          01:03
+             83       0.280267       0.285194          01:03
+             84       0.280310       0.285626          01:03
+             85       0.280072       0.285246          01:03
+             86       0.280135       0.285142          01:03
+             87       0.279987       0.285300          01:03
+             88       0.279944       0.285433          01:03
+             89       0.279952       0.285092          01:03
+             90       0.279980       0.285151          01:03
+             91       0.279881       0.285425          01:03
+             92       0.279888       0.285403          01:03
+Better model found at epoch 93 with valid_loss value: 0.2849401649690981.
+             93       0.279811       0.284940          01:03
+             94       0.279700       0.285049          01:03
+             95       0.279801       0.285398          01:03
+Better model found at epoch 96 with valid_loss value: 0.2848351080686051.
+             96       0.279750       0.284835          01:03
+             97       0.279754       0.285412          01:03
+             98       0.279751       0.285050          01:03
+             99       0.279744       0.284972          01:03
+pretraining completed
+(timeseries-library) customer@ubuntu:~/lxy/github/PRNN/reconstruction$ python rnn_finetune.py --dset traffic --patch_len 16 --stride 8 --hidden_size 512 --context_p
+oints 96 --pretrained_model patchtst_pretrained_cw96_patch16_stride8_epochs-pretra
+in100_mask0.4_model1 --target_points 96 --batch_size 36 --n_epochs_finetune 100
+args: Namespace(batch_size=36, context_points=96, d_ff=256, d_model=128, dropout=0.2, dset_finetune='traffic', features='M', finetuned_model_id=1, head_dropout=0.2, hidden_size=512, is_finetune=1, is_linear_probe=0, lr=0.0001, model_type='based_model', n_epochs_finetune=100, n_heads=16, n_layers=3, num_workers=0, patch_len=16, pretrained_model='patchtst_pretrained_cw96_patch16_stride8_epochs-pretrain100_mask0.4_model1', revin=1, scaler='standard', stride=8, target_points=96)
+gpu 0
+gpu 1
+number of patches: 11
+number of model params 1124032
+weights from saved_models/traffic/masked_patchtst/based_model/patchtst_pretrained_cw96_patch16_stride8_epochs-pretrain100_mask0.4_model1.pth successfully transferred!
+
+suggested_lr 6.73415065775082e-05
+end-to-end finetuning
+number of patches: 11
+number of model params 1124032
+weights from saved_models/traffic/masked_patchtst/based_model/patchtst_pretrained_cw96_patch16_stride8_epochs-pretrain100_mask0.4_model1.pth successfully transferred!
+
+Finetune the head
+          epoch     train_loss     valid_loss      valid_mse           time
+Better model found at epoch 0 with valid_loss value: 0.6536874788342866.
+              0       0.740403       0.653687       0.653688          00:52
+Better model found at epoch 1 with valid_loss value: 0.5429244710335454.
+              1       0.494142       0.542924       0.542924          00:53
+Better model found at epoch 2 with valid_loss value: 0.5082680405370447.
+              2       0.433072       0.508268       0.508268          00:54
+Better model found at epoch 3 with valid_loss value: 0.49006942207019494.
+              3       0.403184       0.490069       0.490069          00:53
+Better model found at epoch 4 with valid_loss value: 0.4825058396791278.
+              4       0.385955       0.482506       0.482506          00:52
+Better model found at epoch 5 with valid_loss value: 0.47633779802500376.
+              5       0.375188       0.476338       0.476338          00:53
+Better model found at epoch 6 with valid_loss value: 0.47364100686474636.
+              6       0.367855       0.473641       0.473641          00:52
+Better model found at epoch 7 with valid_loss value: 0.4706964004764637.
+              7       0.363247       0.470696       0.470696          00:53
+Better model found at epoch 8 with valid_loss value: 0.46937725473641634.
+              8       0.360822       0.469377       0.469377          00:53
+Better model found at epoch 9 with valid_loss value: 0.46920120450547487.
+              9       0.359865       0.469201       0.469201          00:53
+Finetune the entire network
+          epoch     train_loss     valid_loss      valid_mse           time
+Better model found at epoch 0 with valid_loss value: 0.4667642812711657.
+              0       0.357301       0.466764       0.466764          01:09
+Better model found at epoch 1 with valid_loss value: 0.46455022271034013.
+              1       0.354156       0.464550       0.464550          01:09
+Better model found at epoch 2 with valid_loss value: 0.4633162542684189.
+              2       0.351724       0.463316       0.463316          01:09
+Better model found at epoch 3 with valid_loss value: 0.46174752949089404.
+              3       0.349465       0.461748       0.461747          01:09
+Better model found at epoch 4 with valid_loss value: 0.4598584528216248.
+              4       0.347059       0.459858       0.459858          01:08
+Better model found at epoch 5 with valid_loss value: 0.4578631066328642.
+              5       0.344523       0.457863       0.457863          01:08
+Better model found at epoch 6 with valid_loss value: 0.4565160706558549.
+              6       0.341926       0.456516       0.456516          01:08
+Better model found at epoch 7 with valid_loss value: 0.45323725912242246.
+              7       0.339071       0.453237       0.453237          01:08
+Better model found at epoch 8 with valid_loss value: 0.45078387366656003.
+              8       0.336169       0.450784       0.450784          01:08
+Better model found at epoch 9 with valid_loss value: 0.4496423214907247.
+              9       0.333076       0.449642       0.449642          01:08
+Better model found at epoch 10 with valid_loss value: 0.4461908036151038.
+             10       0.330039       0.446191       0.446191          01:08
+Better model found at epoch 11 with valid_loss value: 0.4442431905196418.
+             11       0.326784       0.444243       0.444243          01:08
+Better model found at epoch 12 with valid_loss value: 0.4434379747587109.
+             12       0.323624       0.443438       0.443438          01:08
+Better model found at epoch 13 with valid_loss value: 0.4399323667265578.
+             13       0.320608       0.439932       0.439932          01:08
+Better model found at epoch 14 with valid_loss value: 0.4369494342287214.
+             14       0.317564       0.436949       0.436949          01:08
+Better model found at epoch 15 with valid_loss value: 0.4368295319320063.
+             15       0.314539       0.436830       0.436830          01:08
+Better model found at epoch 16 with valid_loss value: 0.4350820009712711.
+             16       0.311863       0.435082       0.435082          01:08
+Better model found at epoch 17 with valid_loss value: 0.43326428509275283.
+             17       0.309288       0.433264       0.433264          01:08
+Better model found at epoch 18 with valid_loss value: 0.4323462957649759.
+             18       0.306930       0.432346       0.432346          01:08
+Better model found at epoch 19 with valid_loss value: 0.43017015910737133.
+             19       0.304697       0.430170       0.430170          01:08
+             20       0.302531       0.430743       0.430743          01:08
+Better model found at epoch 21 with valid_loss value: 0.42846334274815623.
+             21       0.300567       0.428463       0.428463          01:08
+Better model found at epoch 22 with valid_loss value: 0.42518879375423313.
+             22       0.299137       0.425189       0.425189          01:08
+Better model found at epoch 23 with valid_loss value: 0.4249295505107992.
+             23       0.297282       0.424930       0.424930          01:08
+Better model found at epoch 24 with valid_loss value: 0.4243706433906532.
+             24       0.295502       0.424371       0.424371          01:08
+             25       0.294277       0.425213       0.425213          01:08
+Better model found at epoch 26 with valid_loss value: 0.42310268487074804.
+             26       0.292760       0.423103       0.423103          01:08
+             27       0.291464       0.423263       0.423263          01:08
+Better model found at epoch 28 with valid_loss value: 0.4213535738307119.
+             28       0.290416       0.421354       0.421354          01:08
+Better model found at epoch 29 with valid_loss value: 0.41970180302481563.
+             29       0.289767       0.419702       0.419702          01:08
+             30       0.288748       0.420841       0.420841          01:08
+Better model found at epoch 31 with valid_loss value: 0.41905161876552155.
+             31       0.287753       0.419052       0.419052          01:08
+             32       0.286848       0.420136       0.420136          01:08
+Better model found at epoch 33 with valid_loss value: 0.41735365819959735.
+             33       0.286233       0.417354       0.417354          01:08
+             34       0.285521       0.417414       0.417414          01:08
+Better model found at epoch 35 with valid_loss value: 0.416638764181028.
+             35       0.285007       0.416639       0.416639          01:08
+             36       0.283970       0.416954       0.416954          01:08
+Better model found at epoch 37 with valid_loss value: 0.4154315468491308.
+             37       0.283671       0.415432       0.415432          01:08
+Better model found at epoch 38 with valid_loss value: 0.4146147560886702.
+             38       0.283183       0.414615       0.414615          01:08
+             39       0.282544       0.414950       0.414950          01:08
+             40       0.281923       0.415823       0.415823          01:08
+Better model found at epoch 41 with valid_loss value: 0.4135918568445214.
+             41       0.281435       0.413592       0.413592          01:08
+             42       0.281394       0.415270       0.415270          01:08
+Better model found at epoch 43 with valid_loss value: 0.41357649700387566.
+             43       0.280854       0.413576       0.413577          01:08
+             44       0.280334       0.414041       0.414041          01:08
+Better model found at epoch 45 with valid_loss value: 0.4132673893973886.
+             45       0.279875       0.413267       0.413267          01:08
+             46       0.279582       0.414621       0.414621          01:08
+Better model found at epoch 47 with valid_loss value: 0.41275915505296135.
+             47       0.279148       0.412759       0.412759          01:08
+Better model found at epoch 48 with valid_loss value: 0.4120579673036763.
+             48       0.278960       0.412058       0.412058          01:08
+Better model found at epoch 49 with valid_loss value: 0.4112585574155253.
+             49       0.278568       0.411259       0.411259          01:08
+             50       0.278233       0.412383       0.412383          01:08
+Better model found at epoch 51 with valid_loss value: 0.4107765964827288.
+             51       0.277860       0.410777       0.410777          01:09
+Better model found at epoch 52 with valid_loss value: 0.4097486997784655.
+             52       0.277528       0.409749       0.409749          01:09
+             53       0.277330       0.410153       0.410153          01:09
+             54       0.276981       0.411073       0.411073          01:08
+Better model found at epoch 55 with valid_loss value: 0.4096144297839216.
+             55       0.276884       0.409614       0.409614          01:08
+             56       0.276515       0.410489       0.410489          01:08
+Better model found at epoch 57 with valid_loss value: 0.4093511077311296.
+             57       0.276140       0.409351       0.409351          01:08
+             58       0.275922       0.409465       0.409465          01:08
+Better model found at epoch 59 with valid_loss value: 0.40853317784373117.
+             59       0.275674       0.408533       0.408533          01:08
+             60       0.275460       0.408628       0.408628          01:08
+Better model found at epoch 61 with valid_loss value: 0.4082360861891368.
+             61       0.275185       0.408236       0.408236          01:08
+Better model found at epoch 62 with valid_loss value: 0.40753860978890727.
+             62       0.274980       0.407539       0.407539          01:08
+             63       0.274868       0.409779       0.409779          01:08
+             64       0.274572       0.408601       0.408601          01:08
+Better model found at epoch 65 with valid_loss value: 0.4070911901245485.
+             65       0.274424       0.407091       0.407091          01:08
+Better model found at epoch 66 with valid_loss value: 0.4069823851289697.
+             66       0.274190       0.406982       0.406982          01:08
+Better model found at epoch 67 with valid_loss value: 0.4066561906184151.
+             67       0.273980       0.406656       0.406656          01:08
+             68       0.273823       0.406813       0.406813          01:08
+Better model found at epoch 69 with valid_loss value: 0.4065254114967452.
+             69       0.273609       0.406525       0.406525          01:08
+Better model found at epoch 70 with valid_loss value: 0.406474518244845.
+             70       0.273571       0.406475       0.406475          01:08
+             71       0.273379       0.406998       0.406998          01:08
+Better model found at epoch 72 with valid_loss value: 0.40607145103900133.
+             72       0.273162       0.406071       0.406071          01:08
+             73       0.273115       0.406136       0.406136          01:08
+Better model found at epoch 74 with valid_loss value: 0.4056713602616082.
+             74       0.272978       0.405671       0.405671          01:08
+             75       0.272720       0.406481       0.406481          01:08
+Better model found at epoch 76 with valid_loss value: 0.40556758947217414.
+             76       0.272600       0.405568       0.405567          01:08
+             77       0.272488       0.405796       0.405796          01:08
+             78       0.272445       0.405680       0.405680          01:08
+             79       0.272294       0.405836       0.405836          01:08
+             80       0.272157       0.405584       0.405584          01:08
+Better model found at epoch 81 with valid_loss value: 0.40537401138480206.
+             81       0.272083       0.405374       0.405374          01:08
+Better model found at epoch 82 with valid_loss value: 0.4050238584625226.
+             82       0.271973       0.405024       0.405024          01:08
+             83       0.271873       0.405308       0.405308          01:08
+Better model found at epoch 84 with valid_loss value: 0.4048013612493415.
+             84       0.271770       0.404801       0.404801          01:08
+             85       0.271699       0.405088       0.405088          01:08
+             86       0.271676       0.404821       0.404821          01:08
+             87       0.271584       0.405071       0.405071          01:08
+             88       0.271501       0.405062       0.405062          01:08
+Better model found at epoch 89 with valid_loss value: 0.4046015730828567.
+             89       0.271471       0.404602       0.404602          01:08
+Better model found at epoch 90 with valid_loss value: 0.4044771877704508.
+             90       0.271413       0.404477       0.404477          01:08
+             91       0.271363       0.404755       0.404755          01:08
+             92       0.271310       0.404732       0.404732          01:08
+             93       0.271303       0.404703       0.404703          01:08
+             94       0.271250       0.404650       0.404650          01:08
+             95       0.271239       0.404558       0.404558          01:08
+             96       0.271202       0.404659       0.404659          01:08
+             97       0.271195       0.404579       0.404579          01:08
+             98       0.271180       0.404574       0.404574          01:08
+             99       0.271176       0.404575       0.404575          01:08
+finetune completed
+number of patches: 11
+number of model params 1124032
+score: [array(0.4513781, dtype=float32), array(0.29251295, dtype=float32)]
+----------- Complete! -----------
