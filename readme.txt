@@ -9,6 +9,6 @@ running 'scripts\xxx.sh'
 
 for traffic(96,192,336), exchange, etth1, ettm1, ettm2 --
 running 'cd reconstruction'
-running 'python rnn_pretrain.py --dset traffic --mask_ratio 0.4 --patch_len 16 --stride 8 --hidden_size 512 --context_points 96 --batch_size 32 --n_epochs_pretrain 100'
-running 'python rnn_finetune.py --dset traffic --patch_len 16 --stride 8 --hidden_size 512 --context_points 96 --pretrained_model patchtst_pretrained_cw96_patch16_stride8_epochs-pretrain100_mask0.4_model1 --target_points 96 --batch_size 32 --n_epochs_finetune 100'
+running 'python rnn_pretrain.py --dset traffic --mask_ratio 0.4 --patch_len 16 --stride 8 --hidden_size 512 --context_points 96 --target_points 96 --batch_size 32 --n_epochs_pretrain 100'
+running 'python rnn_finetune.py --dset traffic --patch_len 16 --stride 8 --hidden_size 512 --context_points 96 --target_points 96 --pretrained_model patchtst_pretrained_cw96_patch16_stride8_epochs-pretrain100_mask0.4_model1 --target_points 96 --batch_size 32 --n_epochs_finetune 100'
 please replace '--dset traffic' with '--dset xxx', where xxx is the dataset you want to test. Note that for 96 prediction length of Traffic, the batch_size for rnn_finetune.py is 36. For ETTh1, the hidden_size for rnn_pretrain.py and rnn_finetune.py is 64
