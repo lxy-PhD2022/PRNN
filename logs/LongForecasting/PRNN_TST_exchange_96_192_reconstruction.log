@@ -1,0 +1,9 @@
+python rnn_finetune.py --dset exchange --patch_len 16 --stride 8 --hidden_size 512 --context_points 96 --pretrained_model patchtst_pretrained_cw96_patch16_stride8_epochs-pretrain100_mask0.4_model1 --target_points 192
+args: Namespace(batch_size=32, context_points=96, d_ff=256, d_model=128, dropout=0.2, dset_finetune='exchange', features='M', finetuned_model_id=1, head_dropout=0.2, hidden_size=512, is_finetune=1, is_linear_probe=0, lr=0.0001, model_type='based_model', n_epochs_finetune=100, n_heads=16, n_layers=3, num_workers=0, patch_len=16, pretrained_model='patchtst_pretrained_cw96_patch16_stride8_epochs-pretrain100_mask0.4_model1', revin=1, scaler='standard', stride=8, target_points=192)
+gpu 0
+gpu 1
+finetune completed
+number of patches: 11
+number of model params 1714048
+score: [array(0.17723407, dtype=float32), array(0.2987454, dtype=float32)]
+----------- Complete! -----------
