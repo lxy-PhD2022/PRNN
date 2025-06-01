@@ -109,8 +109,60 @@ mse:0.21888400614261627, mae:0.2986379563808441, rse:0.4282917380332947
 96_96_PRNN_TST_PEMS_ftM_sl96_ll18_pl96_dm16_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0  
 mse:0.35815444588661194, mae:0.3755600154399872, rse:0.5478554368019104
 
-96_96_ETTh1_reconstruction
-score: [array(0.38172472, dtype=float32), array(0.39822578, dtype=float32)]
-
 96_96_Traffic_reconstruction
-score: [array(0.4513781, dtype=float32), array(0.29251295, dtype=float32)]
+score: [array(0.4563102, dtype=float32), array(0.29569528, dtype=float32)]
+
+96_192_Traffic_reconstruction
+score: [array(0.4552008, dtype=float32), array(0.2912716, dtype=float32)]
+
+96_336_Traffic_reconstruction
+score: [array(0.47583744, dtype=float32), array(0.29977816, dtype=float32)]
+
+96_96_exchange_reconstruction
+score: [array(0.08402861, dtype=float32), array(0.20230003, dtype=float32)]
+
+96_192_exchange_reconstruction
+score: [array(0.17723426, dtype=float32), array(0.2987456, dtype=float32)]
+
+96_336_exchange_reconstruction
+score: [array(0.34835652, dtype=float32), array(0.4277424, dtype=float32)]
+
+96_720_exchange_reconstruction
+score: [array(0.981799, dtype=float32), array(0.74407196, dtype=float32)]
+
+96_96_ETTh1_reconstruction
+score: [array(0.3779084, dtype=float32), array(0.39577067, dtype=float32)]
+
+96_192_ETTh1_reconstruction
+score: [array(0.42990664, dtype=float32), array(0.423047, dtype=float32)]
+
+96_336_ETTh1_reconstruction
+score: [array(0.46654502, dtype=float32), array(0.44291028, dtype=float32)]
+
+96_720_ETTh1_reconstruction
+score: [array(0.47153103, dtype=float32), array(0.4653689, dtype=float32)]
+
+96_96_ETTm1_reconstruction
+score: [array(0.32485723, dtype=float32), array(0.36322418, dtype=float32)]
+
+96_192_ETTm1_reconstruction
+score: [array(0.36451668, dtype=float32), array(0.38262582, dtype=float32)]
+
+96_336_ETTm1_reconstruction
+score: [array(0.39641058, dtype=float32), array(0.4057072, dtype=float32)]
+
+96_720_ETTm1_reconstruction
+score: [array(0.45920405, dtype=float32), array(0.44419643, dtype=float32)]
+
+96_96_ETTm2_reconstruction
+score: [array(0.175627, dtype=float32), array(0.26117957, dtype=float32)]
+
+96_192_ETTm2_reconstruction
+score: [array(0.24153686, dtype=float32), array(0.30411384, dtype=float32)]
+
+96_336_ETTm2_reconstruction
+score: [array(0.30649406, dtype=float32), array(0.34824267, dtype=float32)]
+
+96_720_ETTm2_reconstruction
+score: [array(0.40437385, dtype=float32), array(0.40369272, dtype=float32)]
+
